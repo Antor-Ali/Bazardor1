@@ -1,5 +1,13 @@
 
 export type Product = {
+    
+markets: {
+  market: string;
+  division: string;
+  min: number;
+  max: number;
+}[];
+
   id: number;
   slug: string;
   nameBn: string;
@@ -50,3 +58,12 @@ export async function getCategories() {
 
   return response.json();
 }
+
+export async function getProductBySlug(
+  slug: string
+): Promise<Product | undefined> {
+  const products = await getProducts();
+
+  return products.find((product) => product.slug === slug);
+}
+
