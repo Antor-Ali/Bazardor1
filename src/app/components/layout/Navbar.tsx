@@ -4,6 +4,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, ShoppingBasket, X } from "lucide-react";
+import AuthStatus from "@/app/components/layout/AuthStatus";
 
 const categories = [
   { name: "সব পণ্য", href: "/#সব-পণ্য" },
