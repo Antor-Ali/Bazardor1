@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { signUp } from "@/app/lib/auth-client";
 import AuthStatus from "@/app/components/layout/AuthStatus";
+import SocialLoginButtons from "@/app/components/auth/SocialLoginButtons";
 
 
 export default function SignupPage() {
@@ -117,6 +118,7 @@ export default function SignupPage() {
             {loading ? "অ্যাকাউন্ট তৈরি হচ্ছে..." : "সাইন আপ"}
           </button>
         </form>
+        <SocialLoginButtons />
 
         <p className="mt-6 text-center text-sm text-gray-600">
           আগে থেকেই অ্যাকাউন্ট আছে?{" "}

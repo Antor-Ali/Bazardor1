@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { signIn } from "@/app/lib/auth-client";
 import AuthStatus from "@/app/components/layout/AuthStatus";
+import SocialLoginButtons from "@/app/components/auth/SocialLoginButtons";
 
 export default function SigninPage() {
   const router = useRouter();
@@ -96,13 +97,27 @@ export default function SigninPage() {
             {loading ? "সাইন ইন হচ্ছে..." : "সাইন ইন"}
           </button>
         </form>
+        <SocialLoginButtons />
 
-        <p className="mt-6 text-center text-sm text-gray-600">
-          অ্যাকাউন্ট নেই?{" "}
-          <div className="hidden items-center gap-3 md:flex">
-  <AuthStatus />
+     <div className="mt-6 text-center text-sm text-gray-600">
+  <p>
+    অ্যাকাউন্ট নেই?{" "}
+    <a
+      href="/signup"
+      className="font-medium text-green-700 hover:underline"
+    >
+      সাইন আপ করুন
+    </a>
+  </p>
+
+  <div className="hidden items-center justify-center gap-3 md:flex">
+    <AuthStatus />
+  </div>
 </div>
-        </p>
+
+
+
+
       </section>
     </main>
   );
